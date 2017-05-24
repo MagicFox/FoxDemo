@@ -24,42 +24,33 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.android.support:appcompat-v7:25.3.1'
     testCompile 'junit:junit:4.12'
     compile 'com.squareup.retrofit2:retrofit:2.0.0'
     compile 'com.squareup.retrofit2:converter-gson:2.0.0'
     compile 'com.squareup.retrofit2:adapter-rxjava:2.0.0'
-
     compile 'com.google.code.gson:gson:2.6.2'
     compile 'com.squareup.okhttp3:okhttp:3.0.1'
     compile 'io.reactivex:rxjava:1.1.5'
     compile 'io.reactivex:rxandroid:1.2.0'
     compile 'com.facebook.stetho:stetho:1.3.1'
     compile 'com.facebook.stetho:stetho-okhttp3:1.3.1'
-
-
     // butterknife
     compile 'com.jakewharton:butterknife:8.0.1'
-    apt 'com.jakewharton:butterknife-compiler:8.0.1' // butterknife
-
+    apt 'com.jakewharton:butterknife-compiler:8.0.1'
+    // butterknife
     // required if you want to use Mockito for unit tests
     testCompile 'org.mockito:mockito-core:2.7.22'
     // required if you want to use Mockito for Android tests
     androidTestCompile 'org.mockito:mockito-android:2.7.22'
-
-
     compile 'com.cm:rxbus:1.0'
     // 工具类
     compile 'com.blankj:utilcode:1.3.0'
-
-
-
     testCompile 'org.robolectric:robolectric:3.1.2'
     testCompile 'org.khronos:opengl-api:gl1.1-android-2.1_r1'
     testCompile 'org.hamcrest:hamcrest-all:1.3'
     testCompile 'org.robolectric:shadows-httpclient:3.0'
-//    testCompile 'com.squareup.okhttp3:mockwebserver:3.4.1'
+    //    testCompile 'com.squareup.okhttp3:mockwebserver:3.4.1'
     compile 'org.robolectric:shadows-core-v23:3.1.2'
-
 }
