@@ -20,7 +20,9 @@ public class ExpandUtils {
     }
 
     public static void setCompoundDrawablesRelativeWithIntrinsicBounds(TextView textView, Drawable start, Drawable top, Drawable end, Drawable bottom) {
-        if(textView == null)return;
+        if(textView == null){
+            return;
+        }
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
             textView.setCompoundDrawablesRelativeWithIntrinsicBounds(start, top, end, bottom);
         } else {

@@ -5,7 +5,8 @@ package com.fox.datepicker.picker;
  */
 
 public interface WheelItem extends java.io.Serializable {
-
     String getName();
+
+    String getKeyCode();
 
 }

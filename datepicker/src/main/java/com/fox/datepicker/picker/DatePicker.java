@@ -220,7 +220,9 @@ public class DatePicker extends DateTimePicker {
             super.setOnDateTimePickListener(new OnYearMonthDayTimePickListener() {
                 @Override
                 public void onDateTimePicked(String year, String month, String day, String hour, String minute) {
-                    if(year == null || month == null || day == null)return;
+                    if(year == null || month == null || day == null){
+                        return;
+                    }
                     ((OnYearMonthDayPickListener) listener).onDatePicked(year.replace(yearLabel,""), month.replace(monthLabel,""), day.replace(dayLabel,""));
                 }
             });
@@ -228,7 +230,9 @@ public class DatePicker extends DateTimePicker {
             super.setOnDateTimePickListener(new OnYearMonthTimePickListener() {
                 @Override
                 public void onDateTimePicked(String year, String month, String hour, String minute) {
-                    if(year == null || month == null)return;
+                    if(year == null || month == null){
+                        return;
+                    }
                     ((OnYearMonthPickListener) listener).onDatePicked(year.replace(yearLabel,""), month.replace(monthLabel,""));
                 }
             });
@@ -236,7 +240,9 @@ public class DatePicker extends DateTimePicker {
             super.setOnDateTimePickListener(new OnMonthDayTimePickListener() {
                 @Override
                 public void onDateTimePicked(String month, String day, String hour, String minute) {
-                    if(month == null || day == null)return;
+                    if(month == null || day == null){
+                        return;
+                    }
                     ((OnMonthDayPickListener) listener).onDatePicked(month.replace(monthLabel,""), day.replace(dayLabel,""));
                 }
             });

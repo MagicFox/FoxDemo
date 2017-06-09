@@ -20,8 +20,8 @@ import android.view.ViewGroup;
 import android.view.ViewParent;
 
 
-import com.blankj.utilcode.utils.LogUtils;
 import com.fox.datepicker.utils.ConvertUtils;
+import com.fox.datepicker.utils.LogUtil;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -32,9 +32,26 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
+//import LogUtils;
+
 
 /**
  * Created by magicfox on 2017/5/26.
+ */
+
+
+/**
+ * 3D滚轮控件，参阅：http://blog.csdn.net/qq_22393017/article/details/59488906
+ * <p/>
+ * Author:李玉江[QQ:1032694760]
+ * DateTime:2015/12/15 09:45 基于ScrollView，参见https://github.com/wangjiegulu/WheelView
+ * DateTime:2017/01/07 21:37 基于ListView，参见https://github.com/venshine/WheelView
+ * DateTime:2017/04/28 21:10 基于View，参见https://github.com/weidongjian/androidWheelView
+ * Builder:Android Studio
+ *
+ * @see WheelItem
+ * @see WheelView.DividerConfig
+ * @see WheelView.OnItemSelectListener
  */
 public class WheelView extends View {
     public static final float LINE_SPACE_MULTIPLIER = 2.5F;
@@ -393,7 +410,7 @@ public class WheelView extends View {
                 measuredWidth += obtainTextWidth(paintCenterText, label);
             }
         }
-        LogUtils.d("measuredWidth=" + measuredWidth + ",measuredHeight=" + measuredHeight);
+        LogUtil.d("measuredWidth=" + measuredWidth + ",measuredHeight=" + measuredHeight);
         //计算两条横线 和 选中项画笔的基线Y位置
         firstLineY = (measuredHeight - itemHeight) / 2.0F;
         secondLineY = (measuredHeight + itemHeight) / 2.0F;
@@ -925,6 +942,11 @@ public class WheelView extends View {
 
         @Override
         public String getName() {
+            return name;
+        }
+
+        @Override
+        public String getKeyCode() {
             return name;
         }
 
